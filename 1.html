@@ -34,13 +34,18 @@
       <p style="margin-top:10px">HyperText Markup Language</p>
       <img width = "100%"
       Ssrc="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
-      <input type="button" value="night" style="float:right" onclick="
-        document.querySelector('body').style.backgroundColor = 'black';
-        document.querySelector('body').style.color = 'white';
-      ">
-      <input type="button" value="day" style="float:right" onclick="
-        document.querySelector('body').style.backgroundColor = 'white';
-        document.querySelector('body').style.color = 'black';
+      <input id="mode_btn" type="button" value="night" style="float:right" onclick="
+      var body = document.querySelector('body');
+      if(this.value === 'night'){
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+        this.value = 'day';
+      }
+      else{
+        body.style.backgroundColor = 'white';
+        body.style.color = 'black';
+        this.value = 'night';
+      }
       ">
 
       <p>

@@ -25,13 +25,18 @@
             웹페이지의 한가지 요소만 변경해도 관련되는 전체 페이지의 내용을
             한꺼번에 변경할수 있어 일관성을 유지하고 작업시간도 줄이고 트래픽을 줄이는 효과도 있다. 트래픽은 모바일 환경에서 더더욱 장점으로 작용하는데, 인터넷 무제한 요금제(정액제)가 아닌 이상 패킷을 최대한 적게 쓰는 것이 요금폭탄을 피하는 최선의 방법이다. 또한 로딩 속도가 빨라지는 장점도 있다.
           </p>
-          <input type="button" value="night" style="float:right" onclick="
-            document.querySelector('body').style.backgroundColor = 'black';
-            document.querySelector('body').style.color = 'white';
-          ">
-          <input type="button" value="day" style="float:right" onclick="
-            document.querySelector('body').style.backgroundColor = 'white';
-            document.querySelector('body').style.color = 'black';
+          <input id="mode_btn" type="button" value="night" style="float:right" onclick="
+          var body = document.querySelector('body');
+          if(this.value === 'night'){
+            body.style.backgroundColor = 'black';
+            body.style.color = 'white';
+            this.value = 'day';
+          }
+          else{
+            body.style.backgroundColor = 'white';
+            body.style.color = 'black';
+            this.value = 'night';
+          }
           ">
       </div>
   </div>
