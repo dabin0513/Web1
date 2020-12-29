@@ -40,11 +40,25 @@
         body.style.backgroundColor = 'black';
         body.style.color = 'white';
         this.value = 'day';
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+            console.log(alist[i]);
+            alist[i].style.color='powderblue';
+            i = i+1;
+          }
       }
       else{
         body.style.backgroundColor = 'white';
         body.style.color = 'black';
         this.value = 'night';
+        var alist = document.querySelectorAll('a');
+        var i = 0;
+        while(i < alist.length){
+            console.log(alist[i]);
+            alist[i].style.color='green';
+            i = i+1;
+        }
       }
       ">
 
