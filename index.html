@@ -4,6 +4,33 @@
   <title>WEB1 - Welcome</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+  function nightDayHandler(self){
+    var body = document.querySelector('body');
+    if(self.value === 'night'){
+      body.style.backgroundColor = 'black';
+      body.style.color = 'white';
+      self.value = 'day';
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color='powderblue';
+          i = i+1;
+        }
+    }
+    else{
+      body.style.backgroundColor = 'white';
+      body.style.color = 'black';
+      self.value = 'night';
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color='green';
+          i = i+1;
+      }
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -24,29 +51,7 @@
           그러나 1993년 이래로 웹은 인터넷 구조의 절대적 위치를 차지하고 있다.
         </p>
           <input id="mode_btn" type="button" value="night" style="float:right" onclick="
-          var body = document.querySelector('body');
-          if(this.value === 'night'){
-            body.style.backgroundColor = 'black';
-            body.style.color = 'white';
-            this.value = 'day';
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < alist.length){
-                alist[i].style.color='powderblue';
-                i = i+1;
-              }
-          }
-          else{
-            body.style.backgroundColor = 'white';
-            body.style.color = 'black';
-            this.value = 'night';
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < alist.length){
-                alist[i].style.color='blue';
-                i = i+1;
-            }
-          }
+          nightDayHandler(this)
           ">
 
       </div>

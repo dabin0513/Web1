@@ -4,6 +4,35 @@
   <title>WEB1 - HTML</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+  function nightDayHandler(self){
+    var body = document.querySelector('body');
+    if(self.value === 'night'){
+      body.style.backgroundColor = 'black';
+      body.style.color = 'white';
+      self.value = 'day';
+
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color='powderblue';
+          i = i+1;
+        }
+    }
+    else{
+      body.style.backgroundColor = 'white';
+      body.style.color = 'black';
+      self.value = 'night';
+      
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color='green';
+          i = i+1;
+      }
+    }
+  }
+  </script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
@@ -35,29 +64,7 @@
       <img width = "100%"
       Ssrc="https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8Y29kaW5nfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
       <input id="mode_btn" type="button" value="night" style="float:right" onclick="
-      var body = document.querySelector('body');
-      if(this.value === 'night'){
-        body.style.backgroundColor = 'black';
-        body.style.color = 'white';
-        this.value = 'day';
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while(i < alist.length){
-            alist[i].style.color='powderblue';
-            i = i+1;
-          }
-      }
-      else{
-        body.style.backgroundColor = 'white';
-        body.style.color = 'black';
-        this.value = 'night';
-        var alist = document.querySelectorAll('a');
-        var i = 0;
-        while(i < alist.length){
-            alist[i].style.color='green';
-            i = i+1;
-        }
-      }
+      nightDayHandler(this)
       ">
 
       <p>

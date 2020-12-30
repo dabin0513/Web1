@@ -4,6 +4,33 @@
   <title>WEB1 - JavaScript</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+  function nightDayHandler(self){
+    var body = document.querySelector('body');
+    if(self.value === 'night'){
+      body.style.backgroundColor = 'black';
+      body.style.color = 'white';
+      self.value = 'day';
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color='powderblue';
+          i = i+1;
+        }
+    }
+    else{
+      body.style.backgroundColor = 'white';
+      body.style.color = 'black';
+      self.value = 'night';
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+          alist[i].style.color='green';
+          i = i+1;
+      }
+    }
+  }
+  </script>
 </head>
 
 <body>
@@ -24,29 +51,7 @@
           웹 페이지를 자동차에 비유하자면, HTML은 자동차의 뼈대, CSS는 자동차의 외관,
           JavaScript는 자동차의 동력이라고 볼 수 있다.</P>
           <input id="mode_btn" type="button" value="night" style="float:right" onclick="
-          var body = document.querySelector('body');
-          if(this.value === 'night'){
-            body.style.backgroundColor = 'black';
-            body.style.color = 'white';
-            this.value = 'day';
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < alist.length){
-                alist[i].style.color='powderblue';
-                i = i+1;
-              }
-          }
-          else{
-            body.style.backgroundColor = 'white';
-            body.style.color = 'black';
-            this.value = 'night';
-            var alist = document.querySelectorAll('a');
-            var i = 0;
-            while(i < alist.length){
-                alist[i].style.color='green';
-                i = i+1;
-            }
-          }
+          nightDayHandler(this)
           ">
           <p>
       </div>
