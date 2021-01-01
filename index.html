@@ -4,33 +4,8 @@
   <title>WEB1 - Welcome</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="style.css">
-  <script type="text/javascript">
-  function nightDayHandler(self){
-    var body = document.querySelector('body');
-    if(self.value === 'night'){
-      body.style.backgroundColor = 'black';
-      body.style.color = 'white';
-      self.value = 'day';
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-          alist[i].style.color='powderblue';
-          i = i+1;
-        }
-    }
-    else{
-      body.style.backgroundColor = 'white';
-      body.style.color = 'black';
-      self.value = 'night';
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-          alist[i].style.color='green';
-          i = i+1;
-      }
-    }
-  }
-  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="colors.js"></script>
 </head>
 
 <body>
@@ -53,7 +28,6 @@
           <input id="mode_btn" type="button" value="night" style="float:right" onclick="
           nightDayHandler(this)
           ">
-
       </div>
   </div>
           <p>
